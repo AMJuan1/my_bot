@@ -182,5 +182,40 @@
         <mu1 value="0.001"/>
         <mu2 value="0.001"/>
     </gazebo>
+
+
+
+    <!-- //////////////////////////////////////////////////////////////////// -->
+
+    <joint name="camera_joint" type="continuous">
+        <parent link="chassis"/>
+        <child link="camera_link"/>
+        <origin xyz="0.224 0 0.098" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="camera_link">
+        <visual>
+            <geometry>
+                <box size="0.108 0.045 0.045"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.108 0.045 0.045"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.5" x="0.108" y="0.045" z="0.045">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <gazebo reference="camera_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
     
 </robot>
+
+
+

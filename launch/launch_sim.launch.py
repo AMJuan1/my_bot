@@ -53,6 +53,13 @@ def generate_launch_description():
         arguments=["joint_broad"],
     )
 
+    # Spawner for the camera joint controller
+    camera_joint_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["camera_joint_controller"],  # Ensure this matches the name in your my_controller.yaml
+    )
+
 
     # Code for delaying a node (I haven't tested how effective it is)
     # 
@@ -78,5 +85,6 @@ def generate_launch_description():
         gazebo,
         spawn_entity,
         diff_drive_spawner,
-        joint_broad_spawner
+        joint_broad_spawner,
+        camera_joint_spawner
     ])

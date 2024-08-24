@@ -28,6 +28,14 @@
             <publish_odom_tf>true</publish_odom_tf>
             <publish_wheel_tf>true</publish_wheel_tf>
         </plugin>
+
+        <!-- Camera Joint Plugin -->
+
+        <plugin name='camera_joint_controller' filename='libgazebo_ros_control.so'>
+            <camera_joint>camera_joint</camera_joint>
+            <pid>1.0 0.0 0.0</pid>
+        </plugin>
+        
     </gazebo>
 
 </robot>
