@@ -10,14 +10,14 @@ teleop_drive_node: #teleop_drive_node
   ros__parameters:
     
     axis_linear:  # Left thumb stick vertical
-      x: 1 #4
+      x: 7 #4    1 es el joy
     scale_linear:
       x: 0.5
     scale_linear_turbo:
       x: 1.0
 
     axis_angular:  # Left thumb stick horizontal
-      yaw: 0 #3
+      yaw: 6 #3       0 es el joy
     scale_angular:
       yaw: 0.5
     scale_angular_turbo:
